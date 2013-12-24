@@ -1,0 +1,19 @@
+name: Omneity
+version: 1.0
+description: Junction Catch-All Plugin
+author: [zifnab06]
+website: http://github.com/junctionat/Omneityj
+
+main: at.junction.omneity.Omneity
+database: false
+softdepend: []
+
+commands:
+  omneity-reload:
+    description: Reload Omneity Config
+    permission: omneity.reload
+    usage: /omneity-reload
+permissions:
+  omneity.reload:
+    description: Permission to reload omneity config
+    default: op
