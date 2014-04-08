@@ -1,14 +1,19 @@
 package at.junction.omneity;
 
+import java.util.List;
+
 public class Configuration {
     Omneity plugin;
-    public Boolean ACTION_SIGNS_ENABLED;
+    public List<String> ENABLED_MODULES;
+
     public Configuration(Omneity plugin){
         this.plugin = plugin;
     }
 
     void load(){
-        ACTION_SIGNS_ENABLED = plugin.getConfig().getBoolean("actionSigns.enabled");
+        plugin.reloadConfig();
+
+        ENABLED_MODULES = plugin.getConfig().getStringList("modules");
     }
 
 }

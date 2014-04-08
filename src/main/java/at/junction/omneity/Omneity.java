@@ -13,9 +13,6 @@ public class Omneity extends JavaPlugin {
         config = new Configuration(this);
         config.load();
         getServer().getPluginManager().registerEvents(new OmneityListener(this), this);
-        if (config.ACTION_SIGNS_ENABLED){
-            getServer().getPluginManager().registerEvents(new ActionSignsListener(this), this);
-        }
     }
     @Override
     public void onDisable(){
@@ -33,14 +30,6 @@ public class Omneity extends JavaPlugin {
             return true;
         }
 
-        //Action Signs Commands
-        if (config.ACTION_SIGNS_ENABLED){
-            if (command.getName().equals("reload-signs-config")){
-                //do things
-            } else if (command.getName().equals("sign")){
-                //CRUD stuff
-            }
-        }
 
 
         return true;

@@ -3,7 +3,7 @@ package at.junction.omneity.at.junction.omneity.ActionSigns;
 import org.bukkit.Location;
 
 
-public class TeleportSign implements ActionSign {
+public class TeleportSign implements Sign {
     private Location location;
     private Location to;
 

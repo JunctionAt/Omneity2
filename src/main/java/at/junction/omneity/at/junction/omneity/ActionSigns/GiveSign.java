@@ -3,7 +3,7 @@ package at.junction.omneity.at.junction.omneity.ActionSigns;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
-public class GiveSign implements  ActionSign {
+public class GiveSign implements Sign {
     private Location location;
     private ItemStack itemStack;
 
