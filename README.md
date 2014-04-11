@@ -6,6 +6,8 @@ Migration:
 
 Complete:
 * Spawn
+* xp
+
 
 Incomplete:
 * ActionSigns
@@ -17,5 +19,4 @@ Incomplete:
 * recipes
 * warps
 * warpzones
-* xp
 
