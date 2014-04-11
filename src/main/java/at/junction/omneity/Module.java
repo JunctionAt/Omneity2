@@ -1,19 +1,21 @@
 package at.junction.omneity;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
 
-public abstract class Module {
-    boolean loaded = false;
-    Omneity plugin;
-    YamlConfiguration config = null;
-    String defaultConfig = "";
+public abstract class Module  {
+    /*Use:
+    Extend Module class
+    Overwrite defaultConfig with your plugins config
+    call super(plugin) in your constructor
+    Override run() to do something when your plugin runs!
+     */
+    public Omneity plugin;
+    public YamlConfiguration config = null;
+    public String defaultConfig = "";
 
     public Module(Omneity plugin) {
         this.plugin = plugin;
@@ -23,11 +25,6 @@ public abstract class Module {
             plugin.getServer().getLogger().severe(String.format("Module %s failed to load", this.getClass().getName()));
             e.printStackTrace();
         }
-    }
-
-
-    public boolean onCommand(CommandSender sender, Command command, String name, String[] args) {
-        throw new UnsupportedOperationException("Method not implemented");
     }
 
     public void load() throws InvalidConfigurationException, IOException {
@@ -46,4 +43,10 @@ public abstract class Module {
         //Reload Configuration
         this.load();
     }
+
+    public boolean run() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+
 }
