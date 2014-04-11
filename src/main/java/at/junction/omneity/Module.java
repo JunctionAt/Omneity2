@@ -44,9 +44,12 @@ public abstract class Module  {
         this.load();
     }
 
-    public boolean run() {
-        throw new UnsupportedOperationException("Method not implemented");
+    public void onEnable(){
+
     }
 
+    public void onDisable() {
+
+    }
 
 }

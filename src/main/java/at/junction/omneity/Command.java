@@ -7,24 +7,27 @@ import java.util.List;
 
 public class Command extends org.bukkit.command.Command {
     CustomExecutor executor;
+    public Omneity plugin;
 //    List<String> tabComplete;
     /*Both of these MUST be defined. Yay java!*/
-    Command(String name) {
+    private Command(String name) {
         super(name);
     }
 
     /*Both of these MUST be defined. Yay java!*/
-    Command(String name, String description, String usageMessage, List<String> aliases) {
+    private Command(String name, String description, String usageMessage, List<String> aliases) {
         super(name, description, usageMessage, aliases);
     }
+    public Command(String name, String description, String usageMessage, List<String> aliases, Omneity plugin) {
+        super(name, description, usageMessage, aliases);
+        this.plugin = plugin;
 
-    public void registerCommand(List<String> tabComplete, String usage, String permission, String[] aliases, CustomExecutor ce) {
+    }
+    public void registerCommand(String permission, CustomExecutor ce) {
         executor = ce;
         this.setPermission(permission);
-//        this.tabComplete = tabComplete;
-        this.usageMessage = usage;
-        this.setAliases(Arrays.asList(aliases));
-
+        //Actually register plugin here
+        plugin.commandMap.register("/", this);
     }
 
     @Override
